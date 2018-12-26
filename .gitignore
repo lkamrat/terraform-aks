@@ -1,2 +1,3 @@
 /terraform-aks/terraform/provisioning/.terraform
 /temp
+*.tfvars
