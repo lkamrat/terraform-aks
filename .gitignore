@@ -1,1 +1,3 @@
-terraform/secrets/vars_secrets.sh
+*/vars_secrets.sh
+*/terraform.tfvars
+*/temp
