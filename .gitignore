@@ -1,4 +1,4 @@
 *.vars_secrets.sh
 *.tfvars
-provisioning/.terraform
-terraform-aks/terraform/temp/
+/provisioning/.terraform/
+/terraform-aks/terraform/temp/
