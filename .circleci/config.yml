@@ -3,6 +3,25 @@
 # Check https://circleci.com/docs/2.0/language-clojure/ for more details
 #
 version: 2
+machine:
+  services:
+    - docker
+    
+dependencies:
+  override:
+    - docker info
+    - docker build --rm=false -t $REGISTRY_HOST/dev/balerion .
+
+test:
+  override:
+    - docker run -d mydevacr.azurecr.io/dev/balerion:latest 
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_HOST
+      - docker push $REGISTRY_HOST/dev/balerion
 jobs:
   build:
     docker:
