@@ -11,5 +11,5 @@ MAINTAINER Lior Kamrat
 WORKDIR /balerion/provisioning
 
 # Run the terraform plan to deploy K8s via Azure ARM template and the requested K8s apps
-#ENTRYPOINT ["/bin/bash", "-c", "terraform init"]
-#ENTRYPOINT ["/bin/bash", "-c", "terraform apply -auto-approve"] 
+ENTRYPOINT ["/bin/bash", "-c", "terraform init"]
+ENTRYPOINT ["/bin/bash", "-c", "terraform plan"] 
